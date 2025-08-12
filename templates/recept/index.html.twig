@@ -1,0 +1,37 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Recept index{% endblock %}
+
+{% block body %}
+    <h1>Recept index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Recept</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for recept in recepts %}
+            <tr>
+                <td>{{ recept.id }}</td>
+                <td>{{ recept.name }}</td>
+                <td>{{ recept.recept }}</td>
+                <td>
+                    <a href="{{ path('app_recept_show', {'id': recept.id}) }}">show</a>
+                    <a href="{{ path('app_recept_edit', {'id': recept.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="4">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_recept_new') }}">Create new</a>
+{% endblock %}

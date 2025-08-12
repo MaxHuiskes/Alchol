@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New Recept{% endblock %}
+
+{% block body %}
+    <h1>Create new Recept</h1>
+
+    {{ include('recept/_form.html.twig') }}
+
+    <a href="{{ path('app_recept_index') }}">back to list</a>
+{% endblock %}
