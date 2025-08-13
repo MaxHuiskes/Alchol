@@ -40,6 +40,7 @@ security:
         # - { path: ^/profile, roles: ROLE_USER }
         # Allow anonymous access to / and /login
         - { path: ^/login, roles: PUBLIC_ACCESS  }
+        - { path: ^/cocktail/\d+$, roles: PUBLIC_ACCESS }
         - { path: ^/$, roles: PUBLIC_ACCESS  }
 
         # # Require authentication for everything else

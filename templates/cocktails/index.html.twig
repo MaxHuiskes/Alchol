@@ -1,4 +1,9 @@
 {# templates/cocktail/index.html.twig #}
+{% extends 'base.html.twig' %}
+
+{% block title %}Cocktails{% endblock %}
+
+{% block body %}
 
 <h1>Select available alcohols</h1>
 
@@ -10,7 +15,7 @@
 <h2>You can make:</h2>
 <ul>
     {% for recipe in canMake %}
-        <li><a href="{{ path('app_recept_show', {id: recipe.id}) }}">{{ recipe.name }}</a></li>
+        <li><a href="{{ path('cocktail_show', {id: recipe.id}) }}">{{ recipe.name }}</a></li>
     {% else %}
         <li>No cocktails you can make</li>
     {% endfor %}
@@ -20,7 +25,7 @@
 <ul>
     {% for item in almost %}
         <li>
-            <a href="{{ path('app_recept_show', {id: item.recept.id}) }}">{{ item.recept.name }}</a>
+            <a href="{{ path('cocktail_show', {id: item.recept.id}) }}">{{ item.recept.name }}</a>
             — Missing: 
             {% for id in item.missing %}
                 {{ id }}{% if not loop.last %}, {% endif %}
@@ -30,3 +35,4 @@
         <li>No almost-makeable cocktails</li>
     {% endfor %}
 </ul>
+{% endblock %}

@@ -21,8 +21,8 @@
                 <td>{{ recept.name }}</td>
                 <td>{{ recept.recept }}</td>
                 <td>
-                    <a href="{{ path('app_recept_show', {'id': recept.id}) }}">show</a>
-                    <a href="{{ path('app_recept_edit', {'id': recept.id}) }}">edit</a>
+                    <a href="{{ path('app_recept_show', {'id': recept.id}) }}" class="btn">show</a>
+                    <a href="{{ path('app_recept_edit', {'id': recept.id}) }}" class="btn btn-secondary">edit</a>
                 </td>
             </tr>
         {% else %}
@@ -33,5 +33,5 @@
         </tbody>
     </table>
 
-    <a href="{{ path('app_recept_new') }}">Create new</a>
+    <a href="{{ path('app_recept_new') }}" class="btn btn-secondary">Create new</a>
 {% endblock %}

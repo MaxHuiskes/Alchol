@@ -1,4 +1,9 @@
 {# templates/recept/show.html.twig #}
+{% extends 'base.html.twig' %}
+
+{% block title %}Cocktails{% endblock %}
+
+{% block body %}
 
 <h1>{{ recept.name }}</h1>
 
@@ -17,3 +22,5 @@
 {% endif %}
 
 <a href="{{ path('cocktail_index') }}">Back to list</a>
+
+{% endblock %}
