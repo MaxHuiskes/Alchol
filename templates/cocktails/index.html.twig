@@ -48,26 +48,87 @@
 {% block stylesheets %}
 {{ parent() }}
 <style>
+/* Form checkbox grid */
 #alcohol_selection_alcohol {
     display: grid;
-    grid-template-columns: repeat(8, 1fr); /* 5 checkboxes per row */
-    gap: 0.5rem 1rem; /* row and column gap */
-    max-width: 600px; /* maximum width for the container */
+    grid-template-columns: repeat(8, 1fr); /* 8 checkboxes per row */
+    gap: 0.5rem 1rem;
+    max-width: 600px;
     margin-bottom: 1rem;
 }
 
-/* Optional: make checkboxes bigger */
+/* Bigger checkboxes */
 #alcohol_selection_alcohol input[type="checkbox"] {
     transform: scale(1.2);
     margin-right: 0.25rem;
-    max-width: 40px
+    max-width: 40px;
 }
 
-/* Align label nicely next to checkbox */
+/* Align label nicely */
 #alcohol_selection_alcohol label {
     display: inline-block;
     margin-bottom: 0.25rem;
 }
-</style>
 
+/* Headings styling */
+h1 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    color: #2c3e50;
+}
+
+h2 {
+    font-size: 1.5rem;
+    margin-top: 2rem;
+    margin-bottom: 0.5rem;
+    color: #34495e;
+    border-bottom: 2px solid #ddd;
+    padding-bottom: 0.25rem;
+}
+
+/* Lists styling */
+ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+ul li {
+    background: #f9f9f9;
+    margin-bottom: 0.5rem;
+    padding: 0.5rem 0.75rem;
+    border-radius: 5px;
+    transition: background 0.3s;
+}
+
+ul li:hover {
+    background: #e0f7fa;
+}
+
+/* Links inside lists */
+ul li a {
+    text-decoration: none;
+    color: #007bff;
+    font-weight: 500;
+}
+
+ul li a:hover {
+    text-decoration: underline;
+}
+
+/* Button styling */
+button[type="submit"] {
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+button[type="submit"]:hover {
+    background-color: #0056b3;
+}
+</style>
 {% endblock %}
