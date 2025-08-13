@@ -35,6 +35,7 @@ final class CocktialController extends AbstractController
 
         $canMake = [];
         $almost = [];
+        $containsSome = []; // <-- initialize here
 
         if ($form->isSubmitted() && $form->isValid()) {
             // dd($form);
