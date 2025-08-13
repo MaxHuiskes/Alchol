@@ -17,10 +17,16 @@ class ReceptType extends AbstractType
             ->add('name')
             ->add('recept')
             ->add('alcohol', EntityType::class, [
-                'class' => Alcohol::class,
-                'choice_label' => 'name',
-                'multiple' => true,
-            ])
+            'class' => Alcohol::class,
+            'choice_label' => 'name',
+            'label' => 'Ingridients',
+            'multiple' => true,
+            'expanded' => true,
+            'query_builder' => function (\Doctrine\ORM\EntityRepository $er) {
+                return $er->createQueryBuilder('a')
+                        ->orderBy('a.name', 'ASC'); // alphabetical order
+            },
+        ])
         ;
     }
 

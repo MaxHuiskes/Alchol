@@ -1,4 +1,56 @@
-{{ form_start(form) }}
+{{ form_start(form, { attr: { class: 'styled-form' } }) }}
     {{ form_widget(form) }}
     <button class="btn">{{ button_label|default('Save') }}</button>
 {{ form_end(form) }}
+
+
+<style>
+/* Form container */
+.styled-form {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 8px;
+    max-width: 600px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+}
+
+/* Button */
+.btn {
+    background-color: #3498db;
+    color: white;
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 4px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.2s ease;
+}
+
+.btn:hover {
+    background-color: #217dbb;
+}
+
+/* Make the container a grid with 5 items per row */
+#recept_alcohol {
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    gap: -1.5rem 1rem;
+}
+
+/* Wrap checkbox + label visually */
+#recept_alcohol input[type="checkbox"] {
+    transform: scale(1.1);
+    cursor: pointer;
+    max-width: 40px;
+}
+
+/* Make the label appear next to the checkbox */
+#recept_alcohol label {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.3rem;
+    cursor: pointer;
+    margin: 0;
+}
+
+</style>

@@ -13,11 +13,15 @@ class AlcoholSelectionType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('alcohols', EntityType::class, [
+            ->add('alcohol', EntityType::class, [
                 'class' => Alcohol::class,
                 'choice_label' => 'name',
                 'multiple' => true,
-                'expanded' => true, // makes checkboxes
+                'expanded' => true,
+                'query_builder' => function (\Doctrine\ORM\EntityRepository $er) {
+                    return $er->createQueryBuilder('a')
+                            ->orderBy('a.name', 'ASC'); // alphabetical order
+                },
             ]);
     }
 
