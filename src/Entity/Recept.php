@@ -20,9 +20,9 @@ class Recept
     private ?string $name = null;
 
     /**
-     * @var Collection<int, alcohol>
+     * @var Collection<int, Alcohol>
      */
-    #[ORM\ManyToMany(targetEntity: alcohol::class, inversedBy: 'recepts')]
+    #[ORM\ManyToMany(targetEntity: Alcohol::class, inversedBy: 'recepts')]
     private Collection $alcohol;
 
     #[ORM\Column(type: Types::TEXT)]
@@ -51,14 +51,14 @@ class Recept
     }
 
     /**
-     * @return Collection<int, alcohol>
+     * @return Collection<int, Alcohol>
      */
-    public function getalcohol(): Collection
+    public function getAlcohol(): Collection
     {
         return $this->alcohol;
     }
 
-    public function addalcohol(alcohol $alcohol): static
+    public function addAlcohol(Alcohol $alcohol): static
     {
         if (!$this->alcohol->contains($alcohol)) {
             $this->alcohol->add($alcohol);
@@ -67,7 +67,7 @@ class Recept
         return $this;
     }
 
-    public function removealcohol(alcohol $alcohol): static
+    public function removeAlcohol(Alcohol $alcohol): static
     {
         $this->alcohol->removeElement($alcohol);
 

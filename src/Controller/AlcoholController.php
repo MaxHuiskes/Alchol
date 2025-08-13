@@ -2,9 +2,9 @@
 
 namespace App\Controller;
 
-use App\Entity\alcohol;
-use App\Form\alcoholType;
-use App\Repository\alcoholRepository;
+use App\Entity\Alcohol;
+use App\Form\AlcoholType;
+use App\Repository\AlcoholRepository;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
@@ -12,10 +12,10 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Attribute\Route;
 
 #[Route('/alcohol')]
-final class alcoholController extends AbstractController
+final class AlcoholController extends AbstractController
 {
     #[Route(name: 'app_alcohol_index', methods: ['GET'])]
-    public function index(alcoholRepository $alcoholRepository): Response
+    public function index(AlcoholRepository $alcoholRepository): Response
     {
         return $this->render('alcohol/index.html.twig', [
             'alcohols' => $alcoholRepository->findAll(),
@@ -25,8 +25,8 @@ final class alcoholController extends AbstractController
     #[Route('/new', name: 'app_alcohol_new', methods: ['GET', 'POST'])]
     public function new(Request $request, EntityManagerInterface $entityManager): Response
     {
-        $alcohol = new alcohol();
-        $form = $this->createForm(alcoholType::class, $alcohol);
+        $alcohol = new Alcohol();
+        $form = $this->createForm(AlcoholType::class, $alcohol);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
@@ -43,7 +43,7 @@ final class alcoholController extends AbstractController
     }
 
     #[Route('/{id}', name: 'app_alcohol_show', methods: ['GET'])]
-    public function show(alcohol $alcohol): Response
+    public function show(Alcohol $alcohol): Response
     {
         return $this->render('alcohol/show.html.twig', [
             'alcohol' => $alcohol,
@@ -51,9 +51,9 @@ final class alcoholController extends AbstractController
     }
 
     #[Route('/{id}/edit', name: 'app_alcohol_edit', methods: ['GET', 'POST'])]
-    public function edit(Request $request, alcohol $alcohol, EntityManagerInterface $entityManager): Response
+    public function edit(Request $request, Alcohol $alcohol, EntityManagerInterface $entityManager): Response
     {
-        $form = $this->createForm(alcoholType::class, $alcohol);
+        $form = $this->createForm(AlcoholType::class, $alcohol);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {

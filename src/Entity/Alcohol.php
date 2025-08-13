@@ -2,13 +2,13 @@
 
 namespace App\Entity;
 
-use App\Repository\alcoholRepository;
+use App\Repository\AlcoholRepository;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 
-#[ORM\Entity(repositoryClass: alcoholRepository::class)]
-class alcohol
+#[ORM\Entity(repositoryClass: AlcoholRepository::class)]
+class Alcohol
 {
     #[ORM\Id]
     #[ORM\GeneratedValue]

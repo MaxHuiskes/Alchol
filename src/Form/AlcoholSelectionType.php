@@ -2,7 +2,7 @@
 
 namespace App\Form;
 
-use App\Entity\alcohol;
+use App\Entity\Alcohol;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
@@ -14,7 +14,7 @@ class AlcoholSelectionType extends AbstractType
     {
         $builder
             ->add('alcohols', EntityType::class, [
-                'class' => alcohol::class,
+                'class' => Alcohol::class,
                 'choice_label' => 'name',
                 'multiple' => true,
                 'expanded' => true, // makes checkboxes
