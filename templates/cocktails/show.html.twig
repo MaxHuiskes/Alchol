@@ -1,0 +1,19 @@
+{# templates/recept/show.html.twig #}
+
+<h1>{{ recept.name }}</h1>
+
+<h2>Ingredients</h2>
+<ul>
+    {% for alchole in recept.alchole %}
+        <li>{{ alchole.name }}</li>
+    {% else %}
+        <li>No ingredients listed</li>
+    {% endfor %}
+</ul>
+
+{% if recept.recept %}
+    <h2>Instructions</h2>
+    <p>{{ recept.recept }}</p>
+{% endif %}
+
+<a href="{{ path('cocktail_index') }}">Back to list</a>

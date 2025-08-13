@@ -18,7 +18,7 @@ class ReceptType extends AbstractType
             ->add('recept')
             ->add('alchole', EntityType::class, [
                 'class' => Alchole::class,
-                'choice_label' => 'id',
+                'choice_label' => 'name',
                 'multiple' => true,
             ])
         ;
