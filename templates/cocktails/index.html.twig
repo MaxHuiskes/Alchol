@@ -26,13 +26,48 @@
     {% for item in almost %}
         <li>
             <a href="{{ path('cocktail_show', {id: item.recept.id}) }}">{{ item.recept.name }}</a>
-            — Missing: 
-            {% for id in item.missing %}
-                {{ id }}{% if not loop.last %}, {% endif %}
-            {% endfor %}
         </li>
     {% else %}
         <li>No almost-makeable cocktails</li>
     {% endfor %}
 </ul>
+
+<h2>Contains some of the ingredients:</h2>
+<ul>
+    {% for item in containsSome %}
+        <li>
+            <a href="{{ path('cocktail_show', {id: item.recept.id}) }}">{{ item.recept.name }}</a>
+        </li>
+    {% else %}
+        <li>No cocktails that contains some of the ingredient</li>
+    {% endfor %}
+</ul>
+
+{% endblock %}
+
+{% block stylesheets %}
+{{ parent() }}
+<style>
+#alcohol_selection_alcohol {
+    display: grid;
+    grid-template-columns: repeat(8, 1fr); /* 5 checkboxes per row */
+    gap: 0.5rem 1rem; /* row and column gap */
+    max-width: 600px; /* maximum width for the container */
+    margin-bottom: 1rem;
+}
+
+/* Optional: make checkboxes bigger */
+#alcohol_selection_alcohol input[type="checkbox"] {
+    transform: scale(1.2);
+    margin-right: 0.25rem;
+    max-width: 40px
+}
+
+/* Align label nicely next to checkbox */
+#alcohol_selection_alcohol label {
+    display: inline-block;
+    margin-bottom: 0.25rem;
+}
+</style>
+
 {% endblock %}

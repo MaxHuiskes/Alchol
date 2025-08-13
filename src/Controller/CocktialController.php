@@ -37,12 +37,18 @@ final class CocktialController extends AbstractController
         $almost = [];
 
         if ($form->isSubmitted() && $form->isValid()) {
-            $selectedalcohols = $form->get('alcohols')->getData()->toArray();
+            // dd($form);
+          $canMake = [];
+            $almost = [];
+            $containsSome = [];
+
+            $selectedalcohols = $form->get('alcohol')->getData()->toArray();
             $selectedIds = array_map(fn($a) => $a->getId(), $selectedalcohols);
 
             foreach ($receptRepository->findAll() as $recept) {
                 $neededIds = $recept->getalcohol()->map(fn($a) => $a->getId())->toArray();
                 $missing = array_diff($neededIds, $selectedIds);
+                $matched = array_intersect($neededIds, $selectedIds);
 
                 if (count($missing) === 0) {
                     $canMake[] = $recept;
@@ -51,14 +57,22 @@ final class CocktialController extends AbstractController
                         'recept' => $recept,
                         'missing' => $missing,
                     ];
+                } elseif (count($matched) > 0) {
+                    // At least one ingredient is selected, but recipe is incomplete
+                    $containsSome[] = [
+                        'recept' => $recept,
+                        'missing' => $missing,
+                    ];
                 }
             }
+
         }
 
         return $this->render('cocktails/index.html.twig', [
             'form' => $form->createView(),
             'canMake' => $canMake,
-            'almost' => $almost,
+            'containsSome' => $containsSome,
+            'almost' => $almost
         ]);
     }
 
