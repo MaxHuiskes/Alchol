@@ -1,13 +1,13 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Edit Alchole{% endblock %}
+{% block title %}Edit alcohol{% endblock %}
 
 {% block body %}
-    <h1>Edit Alchole</h1>
+    <h1>Edit alcohol</h1>
 
-    {{ include('alchole/_form.html.twig', {'button_label': 'Update'}) }}
+    {{ include('alcohol/_form.html.twig', {'button_label': 'Update'}) }}
 
-    <a href="{{ path('app_alchole_index') }}" class="back-link">Back to list</a>
+    <a href="{{ path('app_alcohol_index') }}" class="back-link">Back to list</a>
 
-    {{ include('alchole/_delete_form.html.twig') }}
+    {{ include('alcohol/_delete_form.html.twig') }}
 {% endblock %}

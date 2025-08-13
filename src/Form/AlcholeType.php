@@ -2,12 +2,12 @@
 
 namespace App\Form;
 
-use App\Entity\Alchole;
+use App\Entity\alcohol;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
-class AlcholeType extends AbstractType
+class alcoholType extends AbstractType
 {
     public function buildForm(FormBuilderInterface $builder, array $options): void
     {
@@ -20,7 +20,7 @@ class AlcholeType extends AbstractType
     public function configureOptions(OptionsResolver $resolver): void
     {
         $resolver->setDefaults([
-            'data_class' => Alchole::class,
+            'data_class' => alcohol::class,
         ]);
     }
 }

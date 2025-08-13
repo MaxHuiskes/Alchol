@@ -2,22 +2,22 @@
 
 namespace App\Repository;
 
-use App\Entity\Alchole;
+use App\Entity\alcohol;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\Persistence\ManagerRegistry;
 
 /**
- * @extends ServiceEntityRepository<Alchole>
+ * @extends ServiceEntityRepository<alcohol>
  */
-class AlcholeRepository extends ServiceEntityRepository
+class alcoholRepository extends ServiceEntityRepository
 {
     public function __construct(ManagerRegistry $registry)
     {
-        parent::__construct($registry, Alchole::class);
+        parent::__construct($registry, alcohol::class);
     }
 
     //    /**
-    //     * @return Alchole[] Returns an array of Alchole objects
+    //     * @return alcohol[] Returns an array of alcohol objects
     //     */
     //    public function findByExampleField($value): array
     //    {
@@ -31,7 +31,7 @@ class AlcholeRepository extends ServiceEntityRepository
     //        ;
     //    }
 
-    //    public function findOneBySomeField($value): ?Alchole
+    //    public function findOneBySomeField($value): ?alcohol
     //    {
     //        return $this->createQueryBuilder('a')
     //            ->andWhere('a.exampleField = :val')

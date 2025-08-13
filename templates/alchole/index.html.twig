@@ -1,9 +1,9 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Alchole index{% endblock %}
+{% block title %}alcohol index{% endblock %}
 
 {% block body %}
-    <h1>Alchole index</h1>
+    <h1>alcohol index</h1>
 
     <table class="table">
         <thead>
@@ -15,14 +15,14 @@
             </tr>
         </thead>
         <tbody>
-        {% for alchole in alcholes %}
+        {% for alcohol in alcohols %}
             <tr>
-                <td>{{ alchole.id }}</td>
-                <td>{{ alchole.name }}</td>
-                <td>{{ alchole.type }}</td>
+                <td>{{ alcohol.id }}</td>
+                <td>{{ alcohol.name }}</td>
+                <td>{{ alcohol.type }}</td>
                 <td>
-                    <a href="{{ path('app_alchole_show', {'id': alchole.id}) }}" class="btn">show</a>
-                    <a href="{{ path('app_alchole_edit', {'id': alchole.id}) }}" class="btn btn-secondary">edit</a>
+                    <a href="{{ path('app_alcohol_show', {'id': alcohol.id}) }}" class="btn">show</a>
+                    <a href="{{ path('app_alcohol_edit', {'id': alcohol.id}) }}" class="btn btn-secondary">edit</a>
                 </td>
             </tr>
         {% else %}
@@ -33,5 +33,5 @@
         </tbody>
     </table>
 
-    <a class="btn btn-secondary" href="{{ path('app_alchole_new') }}">Create new</a>
+    <a class="btn btn-secondary" href="{{ path('app_alcohol_new') }}">Create new</a>
 {% endblock %}

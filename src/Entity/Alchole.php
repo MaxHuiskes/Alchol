@@ -2,13 +2,13 @@
 
 namespace App\Entity;
 
-use App\Repository\AlcholeRepository;
+use App\Repository\alcoholRepository;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 
-#[ORM\Entity(repositoryClass: AlcholeRepository::class)]
-class Alchole
+#[ORM\Entity(repositoryClass: alcoholRepository::class)]
+class alcohol
 {
     #[ORM\Id]
     #[ORM\GeneratedValue]
@@ -24,7 +24,7 @@ class Alchole
     /**
      * @var Collection<int, Recept>
      */
-    #[ORM\ManyToMany(targetEntity: Recept::class, mappedBy: 'alchole')]
+    #[ORM\ManyToMany(targetEntity: Recept::class, mappedBy: 'alcohol')]
     private Collection $recepts;
 
     public function __construct()
@@ -73,7 +73,7 @@ class Alchole
     {
         if (!$this->recepts->contains($recept)) {
             $this->recepts->add($recept);
-            $recept->addAlchole($this);
+            $recept->addalcohol($this);
         }
 
         return $this;
@@ -82,7 +82,7 @@ class Alchole
     public function removeRecept(Recept $recept): static
     {
         if ($this->recepts->removeElement($recept)) {
-            $recept->removeAlchole($this);
+            $recept->removealcohol($this);
         }
 
         return $this;

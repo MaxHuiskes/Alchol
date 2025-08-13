@@ -20,17 +20,17 @@ class Recept
     private ?string $name = null;
 
     /**
-     * @var Collection<int, Alchole>
+     * @var Collection<int, alcohol>
      */
-    #[ORM\ManyToMany(targetEntity: Alchole::class, inversedBy: 'recepts')]
-    private Collection $alchole;
+    #[ORM\ManyToMany(targetEntity: alcohol::class, inversedBy: 'recepts')]
+    private Collection $alcohol;
 
     #[ORM\Column(type: Types::TEXT)]
     private ?string $recept = null;
 
     public function __construct()
     {
-        $this->alchole = new ArrayCollection();
+        $this->alcohol = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -51,25 +51,25 @@ class Recept
     }
 
     /**
-     * @return Collection<int, Alchole>
+     * @return Collection<int, alcohol>
      */
-    public function getAlchole(): Collection
+    public function getalcohol(): Collection
     {
-        return $this->alchole;
+        return $this->alcohol;
     }
 
-    public function addAlchole(Alchole $alchole): static
+    public function addalcohol(alcohol $alcohol): static
     {
-        if (!$this->alchole->contains($alchole)) {
-            $this->alchole->add($alchole);
+        if (!$this->alcohol->contains($alcohol)) {
+            $this->alcohol->add($alcohol);
         }
 
         return $this;
     }
 
-    public function removeAlchole(Alchole $alchole): static
+    public function removealcohol(alcohol $alcohol): static
     {
-        $this->alchole->removeElement($alchole);
+        $this->alcohol->removeElement($alcohol);
 
         return $this;
     }

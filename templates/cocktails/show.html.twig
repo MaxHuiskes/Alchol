@@ -9,8 +9,8 @@
 
 <h2>Ingredients</h2>
 <ul>
-    {% for alchole in recept.alchole %}
-        <li>{{ alchole.name }}</li>
+    {% for alcohol in recept.alcohol %}
+        <li>{{ alcohol.name }}</li>
     {% else %}
         <li>No ingredients listed</li>
     {% endfor %}

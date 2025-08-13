@@ -1,11 +1,11 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}New Alchole{% endblock %}
+{% block title %}New alcohol{% endblock %}
 
 {% block body %}
-    <h1>Create new Alchole</h1>
+    <h1>Create new alcohol</h1>
 
-    {{ include('alchole/_form.html.twig') }}
+    {{ include('alcohol/_form.html.twig') }}
 
-    <a href="{{ path('app_alchole_index') }}" class="back-link">Back to list</a>
+    <a href="{{ path('app_alcohol_index') }}" class="back-link">Back to list</a>
 {% endblock %}

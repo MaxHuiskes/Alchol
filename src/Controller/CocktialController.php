@@ -37,11 +37,11 @@ final class CocktialController extends AbstractController
         $almost = [];
 
         if ($form->isSubmitted() && $form->isValid()) {
-            $selectedAlcholes = $form->get('alcholes')->getData()->toArray();
-            $selectedIds = array_map(fn($a) => $a->getId(), $selectedAlcholes);
+            $selectedalcohols = $form->get('alcohols')->getData()->toArray();
+            $selectedIds = array_map(fn($a) => $a->getId(), $selectedalcohols);
 
             foreach ($receptRepository->findAll() as $recept) {
-                $neededIds = $recept->getAlchole()->map(fn($a) => $a->getId())->toArray();
+                $neededIds = $recept->getalcohol()->map(fn($a) => $a->getId())->toArray();
                 $missing = array_diff($neededIds, $selectedIds);
 
                 if (count($missing) === 0) {

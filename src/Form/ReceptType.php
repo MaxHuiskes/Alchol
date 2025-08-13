@@ -2,7 +2,7 @@
 
 namespace App\Form;
 
-use App\Entity\Alchole;
+use App\Entity\alcohol;
 use App\Entity\Recept;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\AbstractType;
@@ -16,8 +16,8 @@ class ReceptType extends AbstractType
         $builder
             ->add('name')
             ->add('recept')
-            ->add('alchole', EntityType::class, [
-                'class' => Alchole::class,
+            ->add('alcohol', EntityType::class, [
+                'class' => alcohol::class,
                 'choice_label' => 'name',
                 'multiple' => true,
             ])
