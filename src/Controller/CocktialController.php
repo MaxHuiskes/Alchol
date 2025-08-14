@@ -27,7 +27,7 @@ final class CocktialController extends AbstractController
         ]);
     }
 
-    #[Route('/cocktails', name: 'cocktail_list')]
+    #[Route('/cocktail/list', name: 'cocktail_list')]
     public function list(ReceptRepository $receptRepository): Response
     {
         $cocktail = $receptRepository->findAll();
