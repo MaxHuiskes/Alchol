@@ -27,6 +27,16 @@ final class CocktialController extends AbstractController
         ]);
     }
 
+    #[Route('/cocktails', name: 'cocktail_list')]
+    public function list(ReceptRepository $receptRepository): Response
+    {
+        $cocktail = $receptRepository->findAll();
+
+        return $this->render('cocktails/list.html.twig', [
+            'recept' => $cocktail
+        ]);
+    }
+
     #[Route('/', name: 'cocktail_index')]
     public function index(Request $request, ReceptRepository $receptRepository): Response
     {

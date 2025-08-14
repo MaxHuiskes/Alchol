@@ -151,6 +151,46 @@
         a.back-link:hover {
             text-decoration: underline;
         }
+        .cocktail-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+        }
+
+        .cocktail-list li {
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+            transition: transform 0.15s ease, box-shadow 0.15s ease;
+        }
+
+        .cocktail-list li:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        .cocktail-list a {
+            display: block;
+            padding: 1rem;
+            text-decoration: none;
+            color: #3498db;
+            font-weight: bold;
+            text-align: center;
+        }
+
+        .cocktail-list a:hover {
+            color: #217dbb;
+        }
+
+        .no-cocktails {
+            padding: 1rem;
+            text-align: center;
+            color: #888;
+            font-style: italic;
+        }
 
         </style>
     {% endblock %}
@@ -160,16 +200,19 @@
 </head>
 <body>
 
-    {% if app.user %}
         <nav>
             <ul>
-                <li><a href="{{ path('cocktail_index') }}">Cocktails</a></li>
-                <li><a href="{{ path('app_recept_index') }}">Recept</a></li>
-                <li><a href="{{ path('app_alcohol_index') }}">Ingridients</a></li>
-                <li><a href="{{ path('app_logout') }}">Logout</a></li>
+                <li><a href="{{ path('cocktail_index') }}">Cocktails finder</a></li>
+                {% if not app.user %}
+                    <li><a href="{{ path('cocktail_list') }}">Cocktail list</a></li>
+                {% endif %}
+                {% if app.user %}
+                    <li><a href="{{ path('app_recept_index') }}">Receipt</a></li>
+                    <li><a href="{{ path('app_alcohol_index') }}">Ingridients</a></li>
+                    <li><a href="{{ path('app_logout') }}">Logout</a></li>
+                {% endif %}
             </ul>
         </nav>
-    {% endif %}
 
     <main>
         {% block body %}{% endblock %}

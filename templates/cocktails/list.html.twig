@@ -1,0 +1,17 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Cocktails{% endblock %}
+
+{% block body %}
+
+<h1>List of all cocktails</h1>
+
+<ul class="cocktail-list">
+    {% for recipe in recept %}
+        <li><a href="{{ path('cocktail_show', {id: recipe.id}) }}">{{ recipe.name }}</a></li>
+    {% else %}
+        <li class="no-cocktails">No cocktails</li>
+    {% endfor %}
+</ul>
+
+{% endblock %}
