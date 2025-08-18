@@ -19,7 +19,7 @@ class ReceptType extends AbstractType
             ->add('alcohol', EntityType::class, [
             'class' => Alcohol::class,
             'choice_label' => 'name',
-            'label' => 'Ingridients',
+            'label' => 'Ingredients',
             'multiple' => true,
             'expanded' => true,
             'query_builder' => function (\Doctrine\ORM\EntityRepository $er) {
