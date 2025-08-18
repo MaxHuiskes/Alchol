@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+    <!-- Main pages -->
+    <url>
+        <loc>https://drink.printbears.online/</loc>
+        <lastmod>2025-08-18</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>1.0</priority>
+    </url>
+    
+    <url>
+        <loc>https://drink.printbears.online/cocktails</loc>
+        <lastmod>2025-08-18</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.9</priority>
+    </url>
+    
+    <url>
+        <loc>https://drink.printbears.online/login</loc>
+        <lastmod>2025-08-18</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    <!-- Recipe Management -->
+    <url>
+        <loc>https://drink.printbears.online/recept</loc>
+        <lastmod>2025-08-18</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    
+    <url>
+        <loc>https://drink.printbears.online/recept/new</loc>
+        <lastmod>2025-08-18</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.6</priority>
+    </url>
+    
+    <!-- Ingredient Management -->
+    <url>
+        <loc>https://drink.printbears.online/alcohol</loc>
+        <lastmod>2025-08-18</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    
+    <url>
+        <loc>https://drink.printbears.online/alcohol/new</loc>
+        <lastmod>2025-08-18</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.6</priority>
+    </url>
+    
+    <!-- Dynamic content - Cocktail details -->
+    <!-- These would be populated with actual cocktail IDs from your database -->
+    <!-- Example structure for dynamic URLs -->
+    <url>
+        <loc>https://drink.printbears.online/cocktail/1</loc>
+        <lastmod>2025-08-18</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.5</priority>
+    </url>
+    
+    <url>
+        <loc>https://drink.printbears.online/cocktail/2</loc>
+        <lastmod>2025-08-18</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.5</priority>
+    </url>
+    
+    <url>
+        <loc>https://drink.printbears.online/cocktail/3</loc>
+        <lastmod>2025-08-18</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.5</priority>
+    </url>
+    
+    <!-- Dynamic content - Recipe details -->
+    <url>
+        <loc>https://drink.printbears.online/recept/1</loc>
+        <lastmod>2025-08-18</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.5</priority>
+    </url>
+    
+    <url>
+        <loc>https://drink.printbears.online/recept/2</loc>
+        <lastmod>2025-08-18</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.5</priority>
+    </url>
+    
+    <!-- Dynamic content - Ingredient details -->
+    <url>
+        <loc>https://drink.printbears.online/alcohol/1</loc>
+        <lastmod>2025-08-18</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.4</priority>
+    </url>
+    
+    <url>
+        <loc>https://drink.printbears.online/alcohol/2</loc>
+        <lastmod>2025-08-18</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.4</priority>
+    </url>
+    
+</urlset>
