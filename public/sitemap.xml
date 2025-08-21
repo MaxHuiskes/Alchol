@@ -21,37 +21,7 @@
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
-    
-    <!-- Recipe Management -->
-    <url>
-        <loc>https://drink.printbears.online/recept</loc>
-        <lastmod>2025-08-18</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.7</priority>
-    </url>
-    
-    <url>
-        <loc>https://drink.printbears.online/recept/new</loc>
-        <lastmod>2025-08-18</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.6</priority>
-    </url>
-    
-    <!-- Ingredient Management -->
-    <url>
-        <loc>https://drink.printbears.online/alcohol</loc>
-        <lastmod>2025-08-18</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.7</priority>
-    </url>
-    
-    <url>
-        <loc>https://drink.printbears.online/alcohol/new</loc>
-        <lastmod>2025-08-18</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.6</priority>
-    </url>
-    
+        
     <!-- Dynamic content - Cocktail details -->
     <!-- These would be populated with actual cocktail IDs from your database -->
     <!-- Example structure for dynamic URLs -->
@@ -74,36 +44,6 @@
         <lastmod>2025-08-18</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.5</priority>
-    </url>
-    
-    <!-- Dynamic content - Recipe details -->
-    <url>
-        <loc>https://drink.printbears.online/recept/1</loc>
-        <lastmod>2025-08-18</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.5</priority>
-    </url>
-    
-    <url>
-        <loc>https://drink.printbears.online/recept/2</loc>
-        <lastmod>2025-08-18</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.5</priority>
-    </url>
-    
-    <!-- Dynamic content - Ingredient details -->
-    <url>
-        <loc>https://drink.printbears.online/alcohol/1</loc>
-        <lastmod>2025-08-18</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.4</priority>
-    </url>
-    
-    <url>
-        <loc>https://drink.printbears.online/alcohol/2</loc>
-        <lastmod>2025-08-18</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.4</priority>
     </url>
     
 </urlset>
